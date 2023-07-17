@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import Layouts from "./Layouts";
 import { BsArrowBarLeft } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
-import useFetchCountry from "./hooks/useFetchCountry";
+import useFetchBorders from "./hooks/useFetchBorders";
 import { HashLoader } from "react-spinners";
 
-const CountryInfo = () => {
-  const { name } = useParams();
-  const { data, isLoading } = useFetchCountry(name);
+const CountryBorders = () => {
+  const { border } = useParams();
+  const { data, isLoading } = useFetchBorders(border);
 
+  console.log(data);
   const [darkMode, setDarkMode] = useState(false);
 
   const override = {
@@ -36,7 +37,7 @@ const CountryInfo = () => {
               </button>
             </Link>
             {data?.data.map((country) => (
-              <div key={name} className="grid lg:grid-cols-2 py-10">
+              <div key={country.name} className="grid lg:grid-cols-2 py-10">
                 <div>
                   <img
                     src={country.flags.png}
@@ -106,11 +107,11 @@ const CountryInfo = () => {
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <h2 className="flex flex-wrap gap-5 mt-[4.8rem] text-[1.5rem] ">
+                    <h2 className="flex flex-wrap gap-2 mt-[4.8rem] text-[1.5rem] ">
                       Border Countries:{" "}
                       {country.borders?.map((border) => (
                         <Link key={border} to={`/border/${border}`}>
-                          <p className="p-4 shadow-lg">{border}</p>
+                          <p className="p-4 shadow-lg">{border},</p>
                         </Link>
                       ))}
                     </h2>
@@ -125,4 +126,4 @@ const CountryInfo = () => {
   );
 };
 
-export default CountryInfo;
+export default CountryBorders;

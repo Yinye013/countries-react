@@ -4,6 +4,7 @@ import "./App.scss";
 import Layouts from "./components/Layouts";
 import Inputs from "./components/Inputs";
 import CountryInfo from "./components/CountryInfo";
+import CountryBorders from "./components/CountryBorders";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/about/:name" element={<CountryInfo />}>
           {" "}
         </Route>
+        <Route path="/border/:border" element={<CountryBorders />} />
       </Routes>
     </Router>
   );
