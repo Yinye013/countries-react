@@ -106,8 +106,8 @@ const CountryBorders = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <h2 className="flex flex-wrap gap-2 mt-[4.8rem] text-[1.5rem] ">
+                  <div className="flex ">
+                    <h2 className="flex items-center flex-wrap gap-2 mt-[4.8rem] text-[1.5rem] ">
                       Border Countries:{" "}
                       {country.borders?.map((border) => (
                         <Link key={border} to={`/border/${border}`}>
