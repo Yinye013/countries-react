@@ -221,16 +221,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Onyinyechukwu Adesanya**
 
-- GitHub: [@yourgithub](https://github.com/yourgithub)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourlinkedin)
-
-## 🙏 Acknowledgments
-
-- [REST Countries API](https://restcountries.com/) for providing comprehensive country data
-- [React](https://reactjs.org/) team for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Vercel](https://vercel.com/) for hosting and deployment
-
----
-
 ⭐ **If you found this project helpful, please give it a star!** ⭐
