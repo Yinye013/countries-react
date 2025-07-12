@@ -32,10 +32,18 @@ function App() {
             </>
           }
         ></Route>
-        <Route path="/about/:name" element={<CountryInfo />}>
-          {" "}
-        </Route>
-        <Route path="/border/:border" element={<CountryBorders />} />
+        <Route
+          path="/about/:name"
+          element={
+            <CountryInfo darkMode={darkMode} setDarkMode={setDarkMode} />
+          }
+        />
+        <Route
+          path="/border/:border"
+          element={
+            <CountryBorders darkMode={darkMode} setDarkMode={setDarkMode} />
+          }
+        />
       </Routes>
     </Router>
   );

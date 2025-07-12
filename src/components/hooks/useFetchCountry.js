@@ -9,18 +9,16 @@ const useFetchCountry = (input) => {
     console.log(response.data);
     return response;
   };
-  // const allFetcher = async () => {
-  //   const all = await axios.get("https://restcountries.com/v3.1/all");
-  //   console.log(all);
-  //   return all;
-  // };
+
+  // Only fetch if input is provided and not empty
+  const shouldFetch = input && input.trim() !== "";
 
   const { data, error, isLoading } = useSWR(
-    [`https://restcountries.com/v3.1/name/${input}`],
+    shouldFetch ? `https://restcountries.com/v3.1/name/${input}` : null,
     fetcher
   );
 
-  return { data, error, isLoading };
+  return { data, error, isLoading: shouldFetch ? isLoading : false };
 };
 
 export default useFetchCountry;
